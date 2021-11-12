@@ -1,0 +1,47 @@
+---
+title: "Introduction to R"
+author: 
+date: "11/11/2021"
+output: pdf_document 
+---
+
+# Day 1
+- Installation of R and RStudio
+- Overview on the R and RStudio layout and menus
+- Installation of packages required for the training
+
+
+# Day 2
+- Recap
+- Data types and data structures in R
+- Setting of working directory
+- Reading data into R 
+- Helper functions for exploring data in R
+- Writing data out of R
+
+# Day 3
+- Recap
+- Data Cleaning in R
+
+# Day 4
+- Recap
+- Data Manipulation in R 
+
+# Day 5
+- Recap
+- Data Visualization in R
+
+
+# Duration for the training
+- Two hours per day
+
+```{r}
+ggplot(dat1,aes(name,value,fill=LoS))+stat_summary(fun = 'mean',position = 'dodge',geom = 'bar')+stat_summary(geom='errorbar',fun.data = 'mean_se',width=.2,position = position_dodge(.9))
+```
+
+```{r}
+ggplot(dat1,aes(name,value,fill=dose))+
+    stat_summary(geom='errorbar',fun.data = 'mean_se',width=1,position = position_dodge(.9))+
+    stat_summary(fun = 'mean',position = 'dodge',geom = 'bar')+scale_fill_aaas()+scale_y_continuous(expand = c(0,0))+facet_grid(~LoS)+coord_flip()
+```
+
