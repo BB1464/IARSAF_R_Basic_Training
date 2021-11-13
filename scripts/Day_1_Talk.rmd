@@ -37,18 +37,27 @@ style_duo_accent(
   inverse_header_color = "#FFFFFF"
 )
 ```
+# Learning Outcome
 
+- Installation of R and R Studio
+
+- Brief Overview of R and R Studio workspace
+
+- Installation of Packages to use during the training
+
+---
 ## Install R
 
-The first thing you need to do is download the R software. Go to the [Comprehensive R Archive Network (aka “CRAN”) website](https://cran.r-project.org/) and download the software for your operating system (Windows, Mac, or Linux).
+The first thing you need to do is download the R software. Go to the **Comprehensive R Archive Network (aka “CRAN”)** **[https://cran.r-project.org]** and download the software for your operating system (Windows, Mac, or Linux).
 
+---
+.center[
 ![](images/download-r.png)
-
 
 
 ---
 ### Working Directly in R
-
+.center[
 ![](images/r-console.png)
 
 ---
@@ -81,13 +90,18 @@ The first thing you need to do is download the R software. Go to the [Comprehens
 
 
 ## RStudio
+R Studio is an Integrated Development Environment (IDE) that is running on top of R.
 ---
 
 ### Download RStudio
 
-Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstudio/download/#download). Ignore the various versions listed there. All you need is the latest version of RStudio Desktop.
+Download RStudio at the **[RStudio website** **(https://www.rstudio.com/products/rstudio/download/**. Ignore the various versions listed there. All you need is the latest version of RStudio Desktop.
+---
 
+.center[
 ![](images/download-rstudio.png)
+
+
 
 ---
 
@@ -99,9 +113,11 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 
 
 
+
 ---
 .center[
 ![](images/engine-dashboard.png)
+
 
 
 ---
@@ -109,7 +125,11 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 ### RStudio
 
 If you use RStudio, you’ll have a integrated development environment (IDE), the ability to see all of your stored information, and much more.
+---
+
+.center[
 ![](images/rstudio-screenshot.png)
+
 
 
 
@@ -166,6 +186,7 @@ Projects allow you to keep a collection of files all together, including:
 ![](images/rstudio-panes.png)
 
 
+
 ]
 
 ---
@@ -217,8 +238,11 @@ There are **two main file types** that you'll work with:
 **RMarkdown files (.Rmd)**
 
 Text is assumed to be text unless you put it in a code chunk (more on this soon)
-
+---
+.center[
 ![](images/code-chunk.png)
+
+
 
 ]
 
@@ -229,8 +253,10 @@ Text is assumed to be text unless you put it in a code chunk (more on this soon)
 
 
 Create new script file: File -> New File -> R Script
-
+---
+.center[
 ![](images/new-script.gif)
+
 
 
 ---
@@ -239,8 +265,10 @@ Create new script file: File -> New File -> R Script
 ## How to Run Code
 
 Run the code: control + enter on Windows,  command + enter on Mac keystrokes or use Run button
-
+---
+.center[
 ![](images/run-code.gif)
+
 
 
 ???
@@ -273,6 +301,7 @@ They're where much of the power of R is found.
 
 
 
+
 ---
 
 ## Packages We'll Use throughout this training
@@ -281,6 +310,7 @@ They're where much of the power of R is found.
 
 .center[
 ![](images/tidyverse.png)
+
 
 
 
@@ -318,6 +348,7 @@ We'll use [`readr`](https://readr.tidyverse.org/) to import data.
 
 .center[
 ![](images/skimr.png)
+
 
 
 
@@ -434,6 +465,8 @@ Data we have imported is available in the environment/history pane.
 
 .center[
 ![](images/rstudio-panes-highlight-environment.png)
+
+
 ]
 
 ---
@@ -482,7 +515,8 @@ John Chambers, quoted in [Hadley Wickham's Advanced R](http://adv-r.had.co.nz/Fu
 ## Assignment Operator
 
 .center[
-  ![](images/assignment-operator.png)
+![](images/assignment-operator.png)
+
 ]
 
 --
