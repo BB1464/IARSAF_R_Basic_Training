@@ -1,9 +1,9 @@
 ---
-title: "Presentation Ninja"
+title: "Getting Started with R"
 subtitle: 
 author: 
-  - "Yihui Xie;&#x2694"
-  - "Garrick Aden-Buie"
+  - "Oluwafemi OYEDELE"
+  - "Research Fellow, IITA"
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
@@ -101,7 +101,7 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 
 
 
---
+---
 
 .center[
 ![](images/engine-dashboard.png)
@@ -111,7 +111,7 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 
 ### RStudio
 
-If you use RStudio, you’ll have a graphical user interface, the ability to see all of your stored information, and much more.
+If you use RStudio, you’ll have a integrated development environment (IDE), the ability to see all of your stored information, and much more.
 
 ![](images/rstudio-screenshot.png)
 
@@ -199,24 +199,11 @@ class:inverse
 ---
 
 
-class: center, middle, dk-section-title
 
-background-image: url("images/download-course-project.jpeg")
-
-# Download Course Project
 
 ---
-
-class: inverse
-
-## Your Turn
-
---
-
 
 # Files in R
-
----
 
 
 ## File Types
@@ -268,19 +255,7 @@ You can just hit run anywhere on line to run code.
 
 ---
 
-## Comments
 
-Do them for others, and for your future self. 
-
-```{r eval = F}
-
-# This is a comment
-
-head(data, n = 5)
-
-```
-
----
 class: center, middle, dk-section-title
 
 background-image: url("images/packages.jpg")
@@ -405,70 +380,6 @@ Packages should be loaded **once per session** (i.e. every time you start workin
 
 
 
-class:inverse
-
-## Your Turn
-
-1. Open the project you downloaded before (it should be on your desktop)
-
---
-
-1. Open the exercises.R file
-
---
-
-1. Install the tidyverse and skimr packages using the install.packages function
-
---
-
-1. Load the tidyverse and skimr packages using the library function
-
----
-
-class: center, middle, dk-section-title
-
-background-image: url("images/data.jpg")
-
-
-# Import Data
-
-
-
----
-
-## Import Data
-
-Let's read data from a CSV file. 
-
-
-```{r eval = T, echo = F}
-library(here)
-faketucky <- read_csv(here("data", "faketucky.csv"))
-
-
-```
-
-```{r}
-
-faketucky <- read_csv("data/faketucky.csv")
-
-
-```
-
-We now have a data frame/tibble called `faketucky` that we can work with in R.
-
-
-
-???
-
-- Tibbles are ["modern data frames"](https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html). The main difference for our purposes is that tibbles print much more nicely within R. 
-
-- We'll use the terms tibble and data frame interchangeably. 
-
-- For Excel files, try `read_excel` from the `readxl` package. 
-
-- For SPSS files, try `read_sav` from the `haven` package.
-
 
 ---
 
@@ -507,11 +418,8 @@ student.data
 
 ## Directories
 
-If the data file is in the working directory, you only need to specify its name.
+If the data file is in the working directory, you only need to specify its name before you can read it into R.
 
-```{r}
-faketucky <- read_csv("faketucky.csv")
-```
 
 --
 
@@ -521,9 +429,6 @@ If the data file is not in the working directory, you need to specify full path 
 
 When specifying the path name use of forward slash (“/”) not backslash (“\”).
 
-```{r}
-faketucky <- read_csv("data/faketucky.csv")
-```
 
 ---
 
@@ -536,19 +441,7 @@ Data we have imported is available in the environment/history pane.
 ]
 
 ---
-class:inverse
-
-## Your Turn
-
-1. Open the exercises.R file
-
---
-
-1. Import the faketucky data into a data frame called `faketucky`.
-
---
-
-1. Make sure you see `faketucky` in your environment/history pane.
+# In our next training we will learn how to read data into R.
 
 ---
 class: center, middle, dk-section-title
@@ -598,261 +491,16 @@ John Chambers, quoted in [Hadley Wickham's Advanced R](http://adv-r.had.co.nz/Fu
 
 --
 
-We assign the result of the `read_csv` **function** to the `faketucky` **object**
----
+We create an **object** in R by using the assignment opertor ---
 class: center, middle, dk-section-title
 
 background-image: url("images/glasses.jpeg")
 
 
-# Examine Our Data
-
 
 ---
 
-## Examine Our Data
-
-There are many ways to look at our data. We'll talk about a few.
-
-
----
-
-## `faketucky`
-
-If you type the name of your data frame (i.e. `faketucky`), R will output the following: 
-```{r}
-faketucky
-```
-
---
-
-```{r eval = T, paged.print = F, echo = F}
-faketucky
-```
-
----
-
-## `head`
-
-`head` shows us the first X rows. 
-```{r}
-head(faketucky, 5)
-```
-
---
-
-```{r eval = T, paged.print = F, echo = F}
-head(faketucky, 5)
-```
-
----
-
-## `head`
-
-```{r}
-head(faketucky, 5)
-```
-
---
-
-.dk-highlight-box[
-`faketucky` and the number 5 here are **arguments**.
-]
-
----
-
-## `tail`
-
-`tail` shows us the last X rows. 
-```{r}
-tail(faketucky, 5)
-```
-
---
-
-```{r eval = T, paged.print = F, echo = F}
-tail(faketucky, 5)
-```
-
----
-
-## `View`
-
-`View` (note capital V) opens the RStudio viewer (or click on a data frame in the environment pane).
-
-```{r paged.print = F}
-View(faketucky)
-```
-
----
-
-
-
-## `skimr`
-
-The skimr package provides more detailed information about our data frame. It is also broken up by the type of variable.
-
-```{r}
-
-skim(faketucky)
-
-```
-
---
-
-```{r eval = T, paged.print = F, echo = F}
-
-skim(faketucky)
-
-```
-
----
-
-class:inverse
-
-## Your Turn
-
-1. Open the file exercises.R
-
---
-
-1. Follow the instructions to use the `head()`, `tail()`, `View()`, and `skim()` functions to examine your data.
-
----
-
-class: center, middle, dk-section-title
-
-background-image: url("images/issues.jpeg")
-
-# We've Got Issues!
-
----
-
-## We've Got Issues!
-
-Several variables have max values of 999. This seems suspicious!
-
-![](images/missing-data.png)
-
-
----
-
-## We've Got Issues!
-
-Several variables show up as numeric, but we know they're **not actually numeric**.
-
-
-![](images/non-numeric.png)
-
----
-
-## Let's Import Our Data Again
-
-We need to do two things:
-
-
-
---
-
-1. Tell `read_csv` how to handle **missing data**
-
---
-
-1. Make sure `read_csv` assigns the correct **data type** to each variable
-
-
-
-
-
----
-
-
-## Missing Data
-
-Here's how we imported our data the first time:
-
-```{r}
-faketucky <- read_csv("data/faketucky.csv")
-```
-
---
-
-To tell R which data is missing, simply add an argument to the `read_csv` function as follows:
-
-```{r}
-faketucky <- read_csv("data/faketucky.csv",
-                     na = "999") #<<
-```
-
-```{r eval = T, echo = F}
-faketucky <- read_csv(here("data", "faketucky.csv"),
-                      na = "999") 
-
-```
-
-
----
-
-## Missing Data
-
-If we skim our data again, we'll see that there are no longer 999 values. 
-
-```{r}
-skim(faketucky)
-
-```
-
-???
-
-Do this in R
-
-
-
-
-
----
-
-## Data Types
-
-When you run `read_csv` you'll see the following message, which tells you the data types that have been assigned to your data frame.
-
---
-
-
-
-class:inverse
-
-## Your Turn
-
-1. Open the file exercises.R and change the code so that you correctly import the `faketucky` data frame, telling `read_csv` which data is missing and explictly defining column types where necessary.
-
---
-
-1. After you make changes to how you import your data, rerun the code in the Examine Data section to make sure everything worked!
-
----
-
-
-class: center, middle, dk-section-title
-
-background-image: url("images/help.jpeg")
-
-# Getting Help
-
----
-
-### ?function
-
-Use the ? to get help about anything you're confused about
-
-```{r}
-
-?read_csv
-
-```
-
----
-
+## To learn more about R
 ## Tidyverse Website
 
 [![](images/tidyverse-website.gif)](https://www.tidyverse.org/)
@@ -885,329 +533,3 @@ Use the ? to get help about anything you're confused about
 
 
 
-## Typography
-
-Text can be **bold**, _italic_, ~~strikethrough~~, or `inline code`.
-
-[Link to another slide](#colors).
-
-### Lorem Ipsum
-
-Dolor imperdiet nostra sapien scelerisque praesent curae metus facilisis dignissim tortor. 
-Lacinia neque mollis nascetur neque urna velit bibendum. 
-Himenaeos suspendisse leo varius mus risus sagittis aliquet venenatis duis nec.
-
-- Dolor cubilia nostra nunc sodales
-
-- Consectetur aliquet mauris blandit
-
-- Ipsum dis nec porttitor urna sed
-
----
-name: colors
-
-## Colors
-
-.left-column[
-Text color
-
-[Link Color](#3)
-
-**Bold Color**
-
-_Italic Color_
-
-`Inline Code`
-]
-
-.right-column[
-Lorem ipsum dolor sit amet, [consectetur adipiscing elit (link)](#3), 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Erat nam at lectus urna.
-Pellentesque elit ullamcorper **dignissim cras tincidunt (bold)** lobortis feugiat. 
-_Eros donec ac odio tempor_ orci dapibus ultrices. 
-Id porta nibh venenatis cras sed felis eget velit aliquet.
-Aliquam id diam maecenas ultricies mi.
-Enim sit amet 
-`code_color("inline")`
-venenatis urna cursus eget nunc scelerisque viverra.
-]
-
----
-
-# Big Topic or Inverse Slides `#`
-
-## Slide Headings `##`
-
-### Sub-slide Headings `###`
-
-#### Bold Call-Out `####`
-
-This is a normal paragraph text. Only use header levels 1-4.
-
-##### Possible, but not recommended `#####`
-
-###### Definitely don't use h6 `######`
-
----
-
-# Left-Column Headings
-
-.left-column[
-## First
-
-## Second
-
-## Third
-]
-
-.right-column[
-Dolor quis aptent mus a dictum ultricies egestas.
-
-Amet egestas neque tempor fermentum proin massa!
-
-Dolor elementum fermentum pharetra lectus arcu pulvinar.
-]
-
----
-class: inverse center middle
-
-# Topic Changing Interstitial
-
---
-
-```
-class: inverse center middle
-```
-
----
-layout: true
-
-## Blocks
-
----
-
-### Blockquote
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
----
-
-### Code Blocks
-
-#### R Code
-
-```{r eval=FALSE}
-ggplot(gapminder) +
-  aes(x = gdpPercap, y = lifeExp, size = pop, color = country) +
-  geom_point() +
-  facet_wrap(~year)
-```
-
-#### JavaScript
-
-```js
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
----
-
-### More R Code
-
-```{r eval=FALSE}
-dplyr::starwars %>% dplyr::slice_sample(n = 4)
-```
-
----
-
-```{r message=TRUE, eval=requireNamespace("cli", quietly = TRUE)}
-cli::cli_alert_success("It worked!")
-```
-
---
-
-```{r message=TRUE}
-message("Just a friendly message")
-```
-
---
-
-```{r warning=TRUE}
-warning("This could be bad...")
-```
-
---
-
-```{r error=TRUE}
-stop("I hope you're sitting down for this")
-```
-
-
----
-layout: true
-
-## Tables
-
----
-exclude: `r if (requireNamespace("tibble", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("tibble", quietly=TRUE)}
-tibble::as_tibble(mtcars)
-```
-
----
-
-```{r}
-knitr::kable(head(mtcars), format = 'html')
-```
-
----
-exclude: `r if (requireNamespace("DT", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("DT", quietly=TRUE)}
-DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
-```
-
----
-layout: true
-
-## Lists
-
----
-
-.pull-left[
-#### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-]
-
-.pull-right[
-
-#### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-]
-
----
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
----
-
-### Nesting an ol in ul in an ol
-
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-  1. level 4 item (ol)
-  1. level 4 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-
----
-layout: true
-
-## Plots
-
----
-
-```{r plot-example, eval=requireNamespace("ggplot2", quietly=TRUE)}
-library(ggplot2)
-(g <- ggplot(mpg) + aes(hwy, cty, color = class) + geom_point())
-```
-
----
-
-```{r plot-example-themed, eval=requireNamespace("ggplot2", quietly=TRUE)}
-g + xaringanthemer::theme_xaringan(text_font_size = 16, title_font_size = 18) +
-  ggtitle("A Plot About Cars")
-```
-
----
-layout: false
-
-## Square image
-
-<center><img src="https://octodex.github.com/images/labtocat.png" height="400px" /></center>
-
-.footnote[GitHub Octocat]
-
----
-
-### Wide image
-
-![](https://guides.github.com/activities/hello-world/branching.png)
-
-.footnote[Wide images scale to 100% slide width]
-
----
-
-## Two images
-
-.pull-left[
-![](https://octodex.github.com/images/motherhubbertocat.png)
-]
-
-.pull-right[
-![](https://octodex.github.com/images/dinotocat.png)
-]
-
----
-
-### Definition lists can be used with HTML syntax.
-
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
-
----
-class: center, middle
-
-# Thanks!
-
-Slides created via the R packages:
-
-[**xaringan**](https://github.com/yihui/xaringan)<br>
-[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
-
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
