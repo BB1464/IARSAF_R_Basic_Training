@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with R"
+title: "Getting Started with R and R Studio"
 subtitle: 
 author: 
   - "Oluwafemi OYEDELE"
@@ -47,8 +47,6 @@ The first thing you need to do is download the R software. Go to the [Comprehens
 
 
 ---
-
-
 ### Working Directly in R
 
 ![](images/r-console.png)
@@ -102,7 +100,6 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 
 
 ---
-
 .center[
 ![](images/engine-dashboard.png)
 
@@ -112,7 +109,6 @@ Download RStudio at the [RStudio website](https://www.rstudio.com/products/rstud
 ### RStudio
 
 If you use RStudio, you’ll have a integrated development environment (IDE), the ability to see all of your stored information, and much more.
-
 ![](images/rstudio-screenshot.png)
 
 
