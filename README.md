@@ -9,8 +9,6 @@
 - Data types and data structures in R
 - Setting of working directory
 - Reading data into R 
-- Helper functions for exploring data in R
-- Writing data out of R
 - Data Cleaning in R
 
 # Day 2
