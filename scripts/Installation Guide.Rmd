@@ -1,0 +1,50 @@
+---
+title: "Guide to Installation of R and R Studio"
+author: "Oyedele Oluwafemi"
+date: "14/11/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+# Installation of R
+
+The first thing you need to do is download the R software. Go to the Comprehensive R Archive Network (aka “CRAN”) through the highlighted link here **https://cran.r-project.org** and download the software for your operating system (Windows, Mac, or Linux).
+
+
+![](images/download-r.png)
+
+- Select the version of R for your system e.g Windows, Mac or Linux and then follow the necessary step to install R in your system. After Installation open R, you should see the image below.
+---
+\newpage
+
+.[center
+![](images/R.jpg)
+
+# Step 2 
+
+### Download RStudio
+
+Download RStudio at the RStudio website **https://www.rstudio.com/products/rstudio/download/**. Ignore the various versions listed there. All you need is the latest version of RStudio Desktop. Just copy and paste the highlighted link on your browser and follow the installation guide. Ensure that you select the free version of R Studio.
+---
+
+.center[
+![](images/download-rstudio.png)
+
+# After installation open R Studio you should see the image below.
+
+.center[
+![](images/rstudio-panes-highlight-environment.png)
+
+
+# Installation of Packages
+
+- Note you can only install a package into R only once but once you want to use a function from that package we have to load the library.
+
+###   Packages to Install   ####
+
+**Just copy the codes below and paste on your console and follow the installation process**
+
+install.packages(c('knitr','skimr','tidyverse','readxl','esquisse','ggThemeAssist'))
+
+### Incase of any challenge while trying to install any package you can send me an email **oluwafemioyedele908@gmail.com**
