@@ -1,6 +1,6 @@
 ---
 title: "Guide to Installation of R and R Studio"
-author: "Oyedele Oluwafemi"
+author: 
 date: "14/11/2021"
 output:
   pdf_document: default
@@ -9,7 +9,10 @@ output:
 
 # Installation of R
 
-The first thing you need to do is download the R software. Go to the Comprehensive R Archive Network (aka “CRAN”) through the highlighted link here **https://cran.r-project.org** and download the software for your operating system (Windows, Mac, or Linux).
+The first thing you need to do in order to download the R software. Go to the Comprehensive R Archive Network (aka “CRAN”) through the highlighted link here:
+**https://cran.r-project.org** 
+
+Download the software for your operating system (Windows, Mac, or Linux).
 
 
 ![](images/download-r.png)
@@ -25,7 +28,10 @@ The first thing you need to do is download the R software. Go to the Comprehensi
 
 ### Download RStudio
 
-Download RStudio at the RStudio website **https://www.rstudio.com/products/rstudio/download/**. Ignore the various versions listed there. All you need is the latest version of RStudio Desktop. Just copy and paste the highlighted link on your browser and follow the installation guide. Ensure that you select the free version of R Studio.
+Download RStudio at the RStudio website:
+**https://www.rstudio.com/products/rstudio/download/**
+
+Ignore the various versions listed there. All you need is the latest version of RStudio Desktop. Just copy and paste the highlighted link on your browser and follow the installation guide. Ensure that you select the free version of R Studio.
 ---
 
 .center[
@@ -45,6 +51,7 @@ Download RStudio at the RStudio website **https://www.rstudio.com/products/rstud
 
 **Just copy the codes below and paste on your console and follow the installation process**
 
-install.packages(c('knitr','skimr','tidyverse','readxl','esquisse','ggThemeAssist'))
 
-### Incase of any challenge while trying to install any package you can send me an email **oluwafemioyedele908@gmail.com**
+
+install.packages(c('knitr','skimr','tidyverse','readxl','esquisse','ggThemeAssist','here','devtools'))
+

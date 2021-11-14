@@ -1,0 +1,131 @@
+---
+title: "Day 2"
+author: "Oyedele Oluwafemi"
+date: "14/11/2021"
+output: html_document
+---
+
+# Data Types in R
+1 Vector
+A vector is a basic data structure in R. It contains elemnet of the same type. It is further classified into 6 data types which is called atomic vectors. The names of the six atomic vectors are as follows.
+- Numeric
+- Integer
+- Logical
+- Character
+- Complex
+- Raw
+
+# let us create a simple vector
+# N/B We can create a vector with the c(), function where the **c** stands for combine or concatenate. Since a vector must have elements of the same type, this function will try and coerce elements to the same type, if they are different.
+
+```{r Numeric_Vector}
+vec1<-c(1,2,5) # This is a numeric vector
+class(vec1)
+typeof(vec1)
+class(vec1)
+```
+
+# Let us create a character vector
+```{r Character_vector}
+vec2<-c('Black','Yellow','White')
+class(vec2)
+typeof(vec2)
+length(vec2)
+nchar(vec2)
+```
+
+2. List
+List is a data structure having components of mixed data types. i.e a vector having elements of different type is called a list. 
+# Let us create a list
+```{r list}
+list1<-list(1,'Blue',2.4,'Green')
+typeof(list1)
+class(list1)
+length(list1)
+```
+
+3. Matrix
+Matrix is a two dimentional data structure in R programming. Matrix is similar to vector but additionally contains the dimension attribute. 
+```{r matrix}
+mat1<-matrix(1:9,nrow = 3,ncol = 3,byrow = TRUE)
+class(mat1)
+typeof(mat1)
+attributes(mat1)
+```
+
+4. Factors
+Factors is a data structure used for fields that takes only predefined, finite number of values (categorical data). e.g male and female. Factors is normally created with the factor function in R.
+
+```{r}
+fact1<-factor('Male','Female')
+class(fact1)
+```
+
+5. Data frane
+Data frame is a two dimensional data structure in R. It is a special case of a list which has each component of equal length. Each component form the column and the contents of the component form the rows.
+
+```{r}
+df1<-data.frame(Age=c(10,15,20,30),Month=c('Jan','Feb','Mar','Apr'))
+class(df1)
+typeof(df1)
+head(df1)
+tail(df1)
+```
+
+# Setting of Working Directory
+Once you open R, your present working directory is always your root directory that you select when you where installing R.
+- To get your present working directory
+# Type the code below
+getwd()    # What do you see ?
+
+# To set your working directory 
+
+setwd('path') # But this is not necessary since we are using the Rproj and our path is set already.
+
+# Reading Data into R
+- To read in a csv file into R we will use read_csv  # tidyverse
+- To read in an excel file into R we will use read_excel # tidyverse
+
+```{r Load_Library}
+library(tidyverse)
+library(here)
+library(readxl)
+library(skimr)
+```
+
+
+
+```{r}
+read_csv(here::here('data/sorghum.csv')) 
+# Congratulation you have successfully read a csv file into R
+# Now assign it to an object called dat1
+```
+
+```{r}
+read_excel(here::here('data/oats.xlsx'))
+# Assign it into an object
+```
+
+# Let us make use of function from skim R to explore our data
+
+```{r}
+skim(dat1)
+```
+
+# Let use some functions from tidyverse to explore our data
+```{r}
+dat %>% slice_head(n = 5)
+dat %>% slice_tail(n=5)
+```
+
+
+#### Data Cleaning  ####
+# Here we are going to use function from tidyr
+
+- The goal of tidyr is to help you create tidy data. Tidy data is data where:
+
+Every column is variable.
+Every row is an observation.
+Every cell is a single value.
+
+- Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse. If you ensure that your data is tidy, you’ll spend less time fighting with the tools and more time working on your analysis. Learn more about tidy data in vignette("tidy-data")
