@@ -2,7 +2,9 @@
 title: "Day 2"
 author: "Oyedele Oluwafemi"
 date: "14/11/2021"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 # Data Types in R
@@ -76,14 +78,13 @@ tail(df1)
 Once you open R, your present working directory is always your root directory that you select when you where installing R.
 - To get your present working directory
 # Type the code below
-getwd()    # What do you see ?
+getwd()    
 
-# To set your working directory 
-
-setwd('path') # But this is not necessary since we are using the Rproj and our path is set already.
 
 # Reading Data into R
+
 - To read in a csv file into R we will use read_csv  # tidyverse
+
 - To read in an excel file into R we will use read_excel # tidyverse
 
 ```{r Load_Library}
@@ -93,39 +94,100 @@ library(readxl)
 library(skimr)
 ```
 
-
-
 ```{r}
-read_csv(here::here('data/sorghum.csv')) 
+dat1<-read_csv(here::here('data/sorghum.csv')) 
 # Congratulation you have successfully read a csv file into R
 # Now assign it to an object called dat1
 ```
 
 ```{r}
-read_excel(here::here('data/oats.xlsx'))
-# Assign it into an object
+dat2<-read_excel(here::here('data/oats.xlsx'))
 ```
 
-# Let us make use of function from skim R to explore our data
+<!-- # Let us make use of function from skim R to explore our data -->
 
-```{r}
-skim(dat1)
-```
+<!-- ```{r} -->
+<!-- skim(dat1) -->
+<!-- ``` -->
 
 # Let use some functions from tidyverse to explore our data
 ```{r}
-dat %>% slice_head(n = 5)
-dat %>% slice_tail(n=5)
+dat1 %>% slice_head(n = 5)
+dat1 %>% slice_tail(n=5)
 ```
 
 
-#### Data Cleaning  ####
+#### Data Cleaning  using Tidyr ####
+
+- The **tidyverse** is a collection of R packages which share a design philosophy, syntax, and data structures in which tidyr is one of them. One of the powerful function in the tidyverse is the pipes (%>%).
+
+Pipes take the object on the **left** and apply the function on the **right**: Read out loud: "and then..."
+Pipes save us typing, make code readable, and allow chaining function together, so we are going to use them **all the time** when manipulating data frames.
+
+
+
+# Data Science Workflow using the Tidyverse
+
+
+![](images/01_tidyverse_data_science.png)
+
+
+# To install the tidyverse 
+
+```{r tidyverse,eval=FALSE}
+install.packages(tidyverse) # But you have already install this taht is why I set eval=FALSE in the code chunk
+```
+# To load the tidyverse
+
+```{r}
+library(tidyverse) # To load the tidyverse
+```
+
+
 # Here we are going to use function from tidyr
 
 - The goal of tidyr is to help you create tidy data. Tidy data is data where:
 
-Every column is variable.
-Every row is an observation.
-Every cell is a single value.
+![](images/tidydata.png)
+Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse. If you ensure that your data is tidy, you’ll spend less time fighting with the tools and more time working on your analysis. Learn more about tidy data in **vignette("tidy-data")**
 
-- Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse. If you ensure that your data is tidy, you’ll spend less time fighting with the tools and more time working on your analysis. Learn more about tidy data in vignette("tidy-data")
+# We are going to make use of only four function from the tidyr package
+
+- Pivot longer
+- Pivot wider
+- Seperate
+- Unite
+
+![](images/original-dfs-tidy.png)
+
+
+# Let see an example
+
+```{r}
+data("billboard") # this data is from tidyr package and we are going to wrangle this data and produce insight from it
+billboard %>% slice_head(n=5) # What do you observe about this dataset ?
+# is it a tidydata ?
+```
+
+# Let us use the pivot longer function to clean this data
+```{r pivot_longer}
+bill<-billboard %>% pivot_longer(-c(1:3),names_to = "Weeks",values_to = 'Record') # Assign this to an object
+```
+
+# Let us seperate the date.entered into ymd
+```{r separate}
+bill2<-bill %>% separate(col = 'date.entered',into = c('Year','Month','Day'),sep = '-')
+```
+
+# Let return the dataset into a wide format 
+```{r}
+bill3<-bill %>% pivot_wider(names_from = 'Weeks',values_from = 'Record')
+```
+
+
+# Let us unite bill 2 data frame back
+```{r}
+bill4<-bill2 %>% unite(col = 'Date', c('Year','Month','Day'))
+```
+
+# You can practice on this functions by using it to solve real world question that is how you improve your data skills in R. 
