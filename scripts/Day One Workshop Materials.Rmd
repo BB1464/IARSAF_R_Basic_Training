@@ -19,9 +19,9 @@ A vector is a basic data structure in R. It contains elemnet of the same type. I
 
 - Character
 
-- Complex
+- **Complex**
 
-- Raw
+- **Raw**
 
 - let us create a simple vector
 
