@@ -1,6 +1,6 @@
 ---
 title: "Introduction to R and R Studio"
-author: "Oyedele Oluwafemi"
+author: 
 date: "14/11/2021"
 output: html_document
 ---

@@ -1,6 +1,6 @@
 ---
 title: "Data Manipulation and Visualization using the Tidyverse"
-author: "Oyedele Oluwafemi"
+author: 
 date: "14/11/2021"
 output: html_document
 ---
