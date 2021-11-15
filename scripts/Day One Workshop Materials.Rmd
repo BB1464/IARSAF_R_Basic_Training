@@ -28,19 +28,12 @@ A vector is a basic data structure in R. It contains elemnet of the same type. I
 - N/B We can create a vector with the c(), function where the **c** stands for combine or concatenate. Since a vector must have elements of the same type, this function will try and coerce elements to the same type, if they are different.
 
 ```{r Numeric_Vector}
-vec1<-c(1,2,5) # This is a numeric vector
-class(vec1)
-typeof(vec1)
-class(vec1)
+
 ```
 
 # Let us create a character vector
 ```{r Character_vector}
-vec2<-c('Black','Yellow','White')
-class(vec2)
-typeof(vec2)
-length(vec2)
-nchar(vec2)
+
 ```
 
 2. List
@@ -49,10 +42,7 @@ List is a data structure having components of mixed data types. i.e a vector hav
 
 # Let us create a list
 ```{r list}
-list1<-list(1,'Blue',2.4,'Green')
-typeof(list1)
-class(list1)
-length(list1)
+
 ```
 
 3. Matrix
@@ -60,31 +50,24 @@ length(list1)
 Matrix is a two dimentional data structure in R programming. Matrix is similar to vector but additionally contains the dimension attribute. 
 
 ```{r matrix}
-mat1<-matrix(1:9,nrow = 3,ncol = 3,byrow = TRUE)
-class(mat1)
-typeof(mat1)
-attributes(mat1)
+
 ```
 
 4. Factors
 
-Factors is a data structure used for fields that takes only predefined, finite number of values (categorical data). e.g male and female. Factors is normally created with the factor function in R.
+Categorical data are commonly represented in R as factors.
+Factors is normally created with the factor function in R.
 
 ```{r}
-fact1<-factor('Male','Female')
-class(fact1)
+
 ```
 
-5. Data frane
+5. Data frame
 
 Data frame is a two dimensional data structure in R. It is a special case of a list which has each component of equal length. Each component form the column and the contents of the component form the rows.
 
-```{r}
-df1<-data.frame(Age=c(10,15,20,30),Month=c('Jan','Feb','Mar','Apr'))
-class(df1)
-typeof(df1)
-head(df1)
-tail(df1)
+```{r dataframe}
+
 ```
 
 # Setting of Working Directory
@@ -99,9 +82,9 @@ getwd()
 
 # Reading Data into R
 
-- To read in a csv file into R we will use read_csv  # tidyverse
+- To read in a csv file into R we will use read_csv 
 
-- To read in an excel file into R we will use read_excel # tidyverse
+- To read in an excel file into R we will use read_excel 
 
 ```{r Load_Library}
 library(tidyverse)
@@ -110,27 +93,22 @@ library(readxl)
 library(skimr)
 ```
 
-```{r}
+```{r sorghum_dataset}
 dat1<-read_csv(here::here('data/sorghum.csv')) 
 # Congratulation you have successfully read a csv file into R
-# Now assign it to an object called dat1
+# Now assign it to an object
 ```
 
-```{r}
-dat2<-read_excel(here::here('data/oats.xlsx'))
+# Your turn read in the oat dataset into R and assign it to an object called dat2
+```{r oats_dataset}
+
 ```
-
-<!-- # Let us make use of function from skim R to explore our data -->
-
-<!-- ```{r} -->
-<!-- skim(dat1) -->
-<!-- ``` -->
 
 # Let use some functions from tidyverse to explore our data
+# Slice and ....
 
-```{r}
-dat1 %>% slice_head(n = 5)
-dat1 %>% slice_tail(n=5)
+```{r data_exploration}
+
 ```
 
 #### Data Cleaning  using Tidyr ####
@@ -178,9 +156,9 @@ Tidy data describes a standard way of storing data that is used wherever possibl
 ![](images/original-dfs-tidy.png)
 
 
-# Let see an example
+# Let see an example using the billboard dataset in tidyr
 
-```{r}
+```{r billboard_dataset}
 data("billboard") # this data is from tidyr package and we are going to wrangle this data and produce insight from it
 billboard %>% slice_head(n=5) # What do you observe about this dataset ?
 # is it a tidydata ?
@@ -188,17 +166,17 @@ billboard %>% slice_head(n=5) # What do you observe about this dataset ?
 
 # Let us use the pivot longer function to clean this data
 ```{r pivot_longer}
-bill<-billboard %>% pivot_longer(-c(1:3),names_to = "Weeks",values_to = 'Record') # Assign this to an object
+
 ```
 
-# Let us seperate the date.entered into ymd
+# Let us apply the separate function to rate in table 3
 ```{r separate}
-bill2<-bill %>% separate(col = 'date.entered',into = c('Year','Month','Day'),sep = '-')
+table3 %>% separate(rate,into = c('Rate','Count'))
 ```
 
-# Let return the dataset into a wide format 
+# Let return the billboard dataset into a wide format 
 ```{r}
-bill3<-bill %>% pivot_wider(names_from = 'Weeks',values_from = 'Record')
+
 ```
 
 
