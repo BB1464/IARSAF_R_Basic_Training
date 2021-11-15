@@ -8,17 +8,26 @@ output:
 ---
 
 # Data Types in R
+
 1 Vector
+
 A vector is a basic data structure in R. It contains elemnet of the same type. It is further classified into 6 data types which is called atomic vectors. The names of the six atomic vectors are as follows.
-- Numeric
+
+- Double
+
 - Integer
+
 - Logical
+
 - Character
+
 - Complex
+
 - Raw
 
-# let us create a simple vector
-# N/B We can create a vector with the c(), function where the **c** stands for combine or concatenate. Since a vector must have elements of the same type, this function will try and coerce elements to the same type, if they are different.
+- let us create a simple vector
+
+- N/B We can create a vector with the c(), function where the **c** stands for combine or concatenate. Since a vector must have elements of the same type, this function will try and coerce elements to the same type, if they are different.
 
 ```{r Numeric_Vector}
 vec1<-c(1,2,5) # This is a numeric vector
@@ -37,7 +46,9 @@ nchar(vec2)
 ```
 
 2. List
+
 List is a data structure having components of mixed data types. i.e a vector having elements of different type is called a list. 
+
 # Let us create a list
 ```{r list}
 list1<-list(1,'Blue',2.4,'Green')
@@ -47,7 +58,9 @@ length(list1)
 ```
 
 3. Matrix
+
 Matrix is a two dimentional data structure in R programming. Matrix is similar to vector but additionally contains the dimension attribute. 
+
 ```{r matrix}
 mat1<-matrix(1:9,nrow = 3,ncol = 3,byrow = TRUE)
 class(mat1)
@@ -56,6 +69,7 @@ attributes(mat1)
 ```
 
 4. Factors
+
 Factors is a data structure used for fields that takes only predefined, finite number of values (categorical data). e.g male and female. Factors is normally created with the factor function in R.
 
 ```{r}
@@ -64,6 +78,7 @@ class(fact1)
 ```
 
 5. Data frane
+
 Data frame is a two dimensional data structure in R. It is a special case of a list which has each component of equal length. Each component form the column and the contents of the component form the rows.
 
 ```{r}
@@ -75,8 +90,11 @@ tail(df1)
 ```
 
 # Setting of Working Directory
+
 Once you open R, your present working directory is always your root directory that you select when you where installing R.
+
 - To get your present working directory
+
 # Type the code below
 getwd()    
 
@@ -111,15 +129,15 @@ dat2<-read_excel(here::here('data/oats.xlsx'))
 <!-- ``` -->
 
 # Let use some functions from tidyverse to explore our data
+
 ```{r}
 dat1 %>% slice_head(n = 5)
 dat1 %>% slice_tail(n=5)
 ```
 
-
 #### Data Cleaning  using Tidyr ####
 
-- The **tidyverse** is a collection of R packages which share a design philosophy, syntax, and data structures in which tidyr is one of them. One of the powerful function in the tidyverse is the pipes (%>%).
+- The **tidyverse** is a collection of R packages designed for data science. All packages share an underlying design philosophy, gramar, and data structures. Here we are going to look at functions from tidyr which is part of the tidyverse. One of the powerful function in the tidyverse is the pipes (%>%).
 
 Pipes take the object on the **left** and apply the function on the **right**: Read out loud: "and then..."
 Pipes save us typing, make code readable, and allow chaining function together, so we are going to use them **all the time** when manipulating data frames.
@@ -143,20 +161,21 @@ install.packages(tidyverse) # But you have already install this taht is why I se
 library(tidyverse) # To load the tidyverse
 ```
 
-
-# Here we are going to use function from tidyr
-
 - The goal of tidyr is to help you create tidy data. Tidy data is data where:
 
 ![](images/tidydata.png)
+
 Tidy data describes a standard way of storing data that is used wherever possible throughout the tidyverse. If you ensure that your data is tidy, you’ll spend less time fighting with the tools and more time working on your analysis. Learn more about tidy data in **vignette("tidy-data")**
 
 # We are going to make use of only four function from the tidyr package
 
-- Pivot longer
-- Pivot wider
-- Seperate
-- Unite
+- Pivot longer # Lengthens data, by increasing the number of rows and decreasing the number of columns
+
+- Pivot wider # Widens data, by increasing the number of columns and decreasing the number of rows.
+
+- Seperate # Separate one column into multiple
+
+- Unite   # Unite multiple column into one
 
 ![](images/original-dfs-tidy.png)
 
