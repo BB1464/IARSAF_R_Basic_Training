@@ -23,8 +23,6 @@ dplyr is a grammar of data manipulation, providing a consistent set of verbs tha
 
 - These all combine naturally with group_by() which allows you to perform any operation “by group”. You can learn more about them in vignette("dplyr"). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette("two-table").
 
-# We will also look at how to create categorical variable using the ifelse and case_when function in the tidyverse
-
 
 # Select function
 
@@ -61,7 +59,7 @@ dplyr is a grammar of data manipulation, providing a consistent set of verbs tha
 - ggplot2 is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
 
 
-# ggplot2 breaks down a plot into 7 basic component which are
+ggplot2 breaks down a plot into 7 basic component which are
 
 - The data: Here you pass the data that you want to visualie to ggplot
 
@@ -76,4 +74,6 @@ dplyr is a grammar of data manipulation, providing a consistent set of verbs tha
 - theme: themes are powerful way to customize the non-data components of your plots i.e. titles, labels fonts etc.
 
 
-# I am going to demontrate how to use this function
+
+
+I am going to demontrate how to use this function and then we are going to learn how to use the esquisse package alongside with the ggThemeAssist to customize ggplot2.
