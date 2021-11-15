@@ -1,0 +1,79 @@
+---
+title: "Data Manipulation and Visualization using the Tidyverse"
+author: "Oyedele Oluwafemi"
+date: "14/11/2021"
+output: html_document
+---
+
+# Data Manipulation with dplyr
+
+dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:
+
+- select() picks variables based on their names.
+
+- filter() picks cases based on their values.
+
+- mutate() adds new variables that are functions of existing variables but the existing variables are preserve
+
+- transmute() add new variables and drops the existing ones
+
+- summarise() reduces multiple values down to a single summary.
+
+- arrange() changes the ordering of the rows.
+
+- These all combine naturally with group_by() which allows you to perform any operation “by group”. You can learn more about them in vignette("dplyr"). As well as these single-table verbs, dplyr also provides a variety of two-table verbs, which you can learn about in vignette("two-table").
+
+# We will also look at how to create categorical variable using the ifelse and case_when function in the tidyverse
+
+
+# Select function
+
+
+
+
+# Filter
+
+
+
+
+# Mutate
+
+
+
+
+# Transmute
+
+
+
+
+# Summarise
+
+
+
+
+# Arrange
+
+
+
+
+# Data Visualization with ggplot2
+
+- ggplot2 is a system for declaratively creating graphics, based on The Grammar of Graphics. You provide the data, tell ggplot2 how to map variables to aesthetics, what graphical primitives to use, and it takes care of the details.
+
+
+# ggplot2 breaks down a plot into 7 basic component which are
+
+- The data: Here you pass the data that you want to visualie to ggplot
+
+- aestetics: this describe how variables in the data are mapped on the graph.
+
+- geometry: Here you have to specify the type of visualization you want to plot.
+
+- coordinate: this describes how data coordinates are mapped to the plane of the graphics
+
+- facet: this describe how to break up the data into subsets and how to display those subsets as small multiples
+
+- theme: themes are powerful way to customize the non-data components of your plots i.e. titles, labels fonts etc.
+
+
+# I am going to demontrate how to use this function
