@@ -5,6 +5,15 @@ date: "14/11/2021"
 output: html_document
 ---
 
+# Day 2
+
+- Recap
+
+- Data Manipulation in R 
+
+- Data Visualization in R
+
+
 # Data Manipulation with dplyr
 
 dplyr is a grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges:

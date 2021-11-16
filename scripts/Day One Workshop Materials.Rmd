@@ -5,23 +5,41 @@ date: "14/11/2021"
 output: html_document
 ---
 
+
+# Learning Outcome
+
+# Day 1
+
+- Installation of R and RStudio
+
+- Installation of packages required for the training
+
+- Overview on the R and RStudio layout and menus
+
+- Data types and data structures in R
+
+- Setting of working directory
+
+- Reading data into R 
+
+- Data Cleaning in R
+
+
+
+
 # Data Types in R
 
 1 Vector
 
-A vector is a basic data structure in R. It contains elemnet of the same type. It is further classified into 6 data types which is called atomic vectors. The names of the six atomic vectors are as follows.
+A vector is a basic data structure in R. It contains elemnet of the same type. 
 
-- Double
+there are two types of vectors in R:
 
-- Integer
+- Atomic vectors, of which there are six types: Double, Integer, logical, character, **complex** and **raw**. Integer and double vectors are collectively known as numeric vectors.
 
-- Logical
 
-- Character
+- List, which are sometimes called recursive vectors because list contains other lists (i.e they are heterogenous). A vector having element of different type is called a list.
 
-- **Complex**
-
-- **Raw**
 
 - let us create a simple vector
 
@@ -36,9 +54,6 @@ A vector is a basic data structure in R. It contains elemnet of the same type. I
 
 ```
 
-2. List
-
-List is a data structure having components of mixed data types. i.e a vector having elements of different type is called a list. 
 
 # Let us create a list
 ```{r list}
