@@ -30,4 +30,4 @@
 
 # Duration for the training
 
-- Two hours per day
+- Three hours per day
