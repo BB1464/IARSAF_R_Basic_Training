@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with R and R Studio"
+title: "Introduction to R and R Studio"
 subtitle: 
 author: 
   - "Oluwafemi OYEDELE"
@@ -39,11 +39,21 @@ style_duo_accent(
 ```
 # Learning Outcome
 
-- Installation of R and R Studio
+# Day 1
 
-- Brief Overview of R and R Studio workspace
+- Installation of R and RStudio
 
-- Installation of Packages to use during the training
+- Installation of packages required for the training
+
+- Overview on the R and RStudio layout and menus
+
+- Data types and data structures in R
+
+- Setting of working directory
+
+- Reading data into R 
+
+- Data Cleaning in R
 
 ---
 ## Install R
