@@ -16,6 +16,8 @@ output: html_document
 
 - Overview on the R and RStudio layout and menus
 
+- Arithmetic Operations in R
+
 - Data types and data structures in R
 
 - Setting of working directory
@@ -23,6 +25,20 @@ output: html_document
 - Reading data into R 
 
 - Data Cleaning in R
+
+
+
+# Arithmetic Operations in R
+
+- Addition
+
+- Subtraction
+
+- Multiplication
+
+- Division
+
+
 
 
 

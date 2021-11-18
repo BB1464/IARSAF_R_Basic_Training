@@ -11,6 +11,8 @@
 
 - Overview on the R and RStudio layout and menus
 
+- Arithmetic Operations in R
+
 - Data types and data structures in R
 
 - Setting of working directory
