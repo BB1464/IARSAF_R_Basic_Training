@@ -53,6 +53,10 @@ style_duo_accent(
 
 - Arithmetic Operations in R
 
+---
+
+  # Continuation
+
 - Data types and data structures in R
 
 - How to subset a objects in R
