@@ -6,7 +6,7 @@ output: html_document
 ---
 
 
-# Learning Outcome
+# Learning Outcomes
 
 # Day 1
 
