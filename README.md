@@ -5,6 +5,10 @@
 
 # Day 1
 
+- What is R and R Studio ?
+
+- Why R ?
+
 - Installation of R and RStudio
 
 - Installation of packages required for the training
@@ -14,6 +18,8 @@
 - Arithmetic Operations in R
 
 - Data types and data structures in R
+
+- How to subset a objects in R
 
 - Setting of working directory
 

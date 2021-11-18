@@ -41,6 +41,10 @@ style_duo_accent(
 
 # Day 1
 
+- What is R and R Studio ?
+
+- Why R ?
+
 - Installation of R and RStudio
 
 - Installation of packages required for the training
