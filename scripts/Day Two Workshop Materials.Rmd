@@ -9,6 +9,8 @@ output: html_document
 
 - Recap
 
+- Data Cleaning with Tidyr
+
 - Data Manipulation in R 
 
 - Data Visualization in R
@@ -82,7 +84,7 @@ ggplot2 breaks down a plot into 7 basic component which are
 
 - theme: themes are powerful way to customize the non-data components of your plots i.e. titles, labels fonts etc.
 
-
+- Statistics: This has to do with statistical representation of our data to aid understanding.
 
 
 I am going to demontrate how to use this function and then we are going to learn how to use the esquisse package alongside with the ggThemeAssist to customize ggplot2.
