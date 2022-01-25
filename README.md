@@ -35,6 +35,9 @@
 
 - Data Visualization in R
 
+- Multivariate Analysis in R
+
+- GxE Analysis in R
 
 # Duration for the training
 
