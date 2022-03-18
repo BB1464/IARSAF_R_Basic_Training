@@ -228,18 +228,24 @@ ggplot(bill1,aes(x=Rank))+geom_histogram()
 
 # Let us apply the separate function to rate in table 3
 ```{r separate}
-table3 %>% separate(rate,into = c('Rate','Count'))
+tab4<-table3 %>% separate(rate,into = c('Rate','Count'))
 ```
 
 # Let return the billboard dataset into a wide format 
 ```{r}
-
+bill2<-bill1 %>% pivot_wider(names_from = Week,values_from = Rank)
 ```
 
 
 # Let us unite bill 2 data frame back
 ```{r}
-bill4<-bill2 %>% unite(col = 'Date', c('Year','Month','Day'))
+# bill6<-bill2 %>% unite(col = 'Date', c('Year','Month','Day'))
 ```
+
+```{r}
+tab5<-tab4 %>% unite(col = 'Rate',c('Rate','Count'),sep = '/')
+View(tab5)
+```
+
 
 # You can practice on this functions by using it to solve real world question that is how you improve your data skills in R. 
