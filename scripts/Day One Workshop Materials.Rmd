@@ -159,7 +159,6 @@ skim(dat2)
 # Your turn read in the oat dataset into #R and assign it to an object called dat2
 #```{r oats_dataset}
 
-<!-- ``` -->
 
 # Let use some functions from tidyverse to explore our data
 # Slice and ....
@@ -237,8 +236,9 @@ bill2<-bill1 %>% pivot_wider(names_from = Week,values_from = Rank)
 ```
 
 
-# Let us unite bill 2 data frame back
+
 ```{r}
+<<<<<<< HEAD
 # bill6<-bill2 %>% unite(col = 'Date', c('Year','Month','Day'))
 ```
 
@@ -247,5 +247,11 @@ tab5<-tab4 %>% unite(col = 'Rate',c('Rate','Count'),sep = '/')
 View(tab5)
 ```
 
+=======
+tab5<-tab4 %>% unite(col = 'Rate',c('Rate','Count'),sep = '/')
+View(tab5)
+```
+
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 
 # You can practice on this functions by using it to solve real world question that is how you improve your data skills in R. 

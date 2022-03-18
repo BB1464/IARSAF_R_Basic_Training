@@ -9,7 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<<<<<<< HEAD
 <meta name="author" content />
+=======
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 
 
 <title>Introduction to R and R Studio</title>
@@ -399,6 +402,7 @@ pre code {
 <div id="data-types-in-r" class="section level1">
 <h1>Data Types in R</h1>
 <p>1 Vector</p>
+<<<<<<< HEAD
 <p>A vector is a basic data structure in R. It contains elemnet of the
 same type.</p>
 <p>there are two types of vectors in R:</p>
@@ -410,6 +414,13 @@ vectors.</p></li>
 <li><p>List, which are sometimes called recursive vectors because list
 contains other lists (i.e they are heterogenous). A vector having
 element of different type is called a list.</p></li>
+=======
+<p>A vector is a basic data structure in R. It contains elemnet of the same type.</p>
+<p>there are two types of vectors in R:</p>
+<ul>
+<li><p>Atomic vectors, of which there are six types: Double, Integer, logical, character, <strong>complex</strong> and <strong>raw</strong>. Integer and double vectors are collectively known as numeric vectors.</p></li>
+<li><p>List, which are sometimes called recursive vectors because list contains other lists (i.e they are heterogenous). A vector having element of different type is called a list.</p></li>
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 <li><p>let us create a simple vector</p></li>
 <li><p>N/B We can create a vector with the c(), function where the
 <strong>c</strong> stands for combine or concatenate. Since a vector
@@ -448,17 +459,25 @@ class(dat4)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Matrix</li>
 </ol>
+<<<<<<< HEAD
 <p>Matrix is a two dimentional data structure in R programming. Matrix
 is similar to vector but additionally contains the dimension
 attribute.</p>
+=======
+<p>Matrix is a two dimentional data structure in R programming. Matrix is similar to vector but additionally contains the dimension attribute.</p>
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 <pre class="r"><code>dat5 &lt;- matrix(c(1:9),nrow = 3,ncol = 3,byrow = TRUE)
 class(dat5)</code></pre>
 <pre><code>## [1] &quot;matrix&quot; &quot;array&quot;</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Factors</li>
 </ol>
+<<<<<<< HEAD
 <p>Categorical data are commonly represented in R as factors. Factors is
 normally created with the factor function in R.</p>
+=======
+<p>Categorical data are commonly represented in R as factors. Factors is normally created with the factor function in R.</p>
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 <pre class="r"><code>dat6 &lt;- factor(c(&#39;TALL&#39;,&#39;SHORT&#39;,&#39;AVERAGE&#39;))
 class(dat6)</code></pre>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
@@ -467,9 +486,13 @@ class(dat6)</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Data frame</li>
 </ol>
+<<<<<<< HEAD
 <p>Data frame is a two dimensional data structure in R. It is a special
 case of a list which has each component of equal length. Each component
 form the column and the contents of the component form the rows.</p>
+=======
+<p>Data frame is a two dimensional data structure in R. It is a special case of a list which has each component of equal length. Each component form the column and the contents of the component form the rows.</p>
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 <pre class="r"><code>dat7 &lt;- data.frame(Age=c(40,30),Sex=c(&#39;Male&#39;,&#39;Female&#39;))
 class(dat7)</code></pre>
 <pre><code>## [1] &quot;data.frame&quot;</code></pre>
@@ -602,6 +625,7 @@ skim(dat2)</code></pre>
 </table>
 <p><strong>Variable type: factor</strong></p>
 <table>
+<<<<<<< HEAD
 <colgroup>
 <col width="15%" />
 <col width="11%" />
@@ -610,6 +634,8 @@ skim(dat2)</code></pre>
 <col width="10%" />
 <col width="38%" />
 </colgroup>
+=======
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 <thead>
 <tr class="header">
 <th align="left">skim_variable</th>
@@ -656,6 +682,7 @@ skim(dat2)</code></pre>
 </tbody>
 </table>
 <p><strong>Variable type: numeric</strong></p>
+<<<<<<< HEAD
 <table style="width:100%;">
 <colgroup>
 <col width="11%" />
@@ -670,6 +697,9 @@ skim(dat2)</code></pre>
 <col width="4%" />
 <col width="34%" />
 </colgroup>
+=======
+<table>
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 <thead>
 <tr class="header">
 <th align="left">skim_variable</th>
@@ -729,8 +759,12 @@ skim(dat2)</code></pre>
 </table>
 </div>
 <div id="your-turn-read-in-the-oat-dataset-into-r-and-assign-it-to-an-object-called-dat2" class="section level1">
+<<<<<<< HEAD
 <h1>Your turn read in the oat dataset into #R and assign it to an object
 called dat2</h1>
+=======
+<h1>Your turn read in the oat dataset into #R and assign it to an object called dat2</h1>
+>>>>>>> 337e90b6fe13d0268c46b200716c9f67a668cc8a
 <p>#```{r oats_dataset}</p>
 <!-- ``` -->
 </div>
