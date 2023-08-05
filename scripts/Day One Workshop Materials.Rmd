@@ -157,8 +157,9 @@ skim(dat2)
 ```
 
 # Your turn read in the oat dataset into #R and assign it to an object called dat2
-#```{r oats_dataset}
+```{r oats_dataset}
 
+```
 
 # Let use some functions from tidyverse to explore our data
 # Slice and ....
@@ -170,7 +171,7 @@ dat2 %>% slice_tail()
 
 #### Data Cleaning  using Tidyr ####
 
-- The **tidyverse** is a collection of R packages designed for data science. All packages share an underlying design philosophy, gramar, and data structures. Here we are going to look at functions from tidyr which is part of the tidyverse. One of the powerful function in the tidyverse is the pipes (%>%).
+- The **tidyverse** is a collection of R packages designed for data science. All packages share an underlying design philosophy, grammar, and data structures. Here we are going to look at functions from tidyr which is part of the tidyverse. One of the powerful function in the tidyverse is the pipes (%>%).
 
 Pipes take the object on the **left** and apply the function on the **right**: Read out loud: "and then..."
 Pipes save us typing, make code readable, and allow chaining function together, so we are going to use them **all the time** when manipulating data frames.

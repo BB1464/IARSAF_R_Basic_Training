@@ -11,9 +11,12 @@ library(tidyverse)
 ## option1:
 library(agridat)
 data(omer.sorghum)
+
 omer.sorghum <- omer.sorghum %>% 
   as_tibble()
+
 omer.sorghum
+
 summary(omer.sorghum)
 levels(omer.sorghum$env)
 levels(omer.sorghum$rep)
@@ -31,8 +34,9 @@ dat.summary <- omer.sorghum %>%
     vyield=var(yield, na.rm=TRUE),
     sdyield=sd(yield, na.rm=TRUE),
     Ngeno=length(unique(gen)),
-    Nobs=n(),
-  )
+    Nobs=n(),.groups = 'drop'
+    )
+
 dat.summary
 
 #### The model  ----------------------------------------------------------------
@@ -53,6 +57,7 @@ model <- lmer(yield ~ gen + env + gen:env + (1 | env:rep), omer.sorghum)
 # gen*env = gen + env + gen:env
 # model <- lmer(yield ~ gen*env + (1 | env:rep), omer.sorghum)
 test <- anova(model, ddf = "Kenward-Roger", type = 3)
+
 test
 
 # If the design was alpha lattice
